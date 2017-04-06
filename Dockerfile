@@ -19,4 +19,6 @@ WORKDIR /home/jupyter/notebooks
 
 VOLUME ["/home/jupyter/notebooks"]
 
+ENTRYPOINT ["tini", "--"]
+
 CMD ["jupyter", "notebook", "--no-browser", "--config", "/home/jupyter/jupyter_notebook_config.py"]
