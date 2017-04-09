@@ -1,0 +1,5 @@
+image: cprieto/jupyter-ocaml
+volumes:
+    - ./notebooks:/home/jupyter/notebook
+ports:
+    - "8888:8888"

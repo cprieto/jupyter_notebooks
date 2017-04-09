@@ -1,0 +1,13 @@
+{
+ "display_name": "OCaml",
+ "language": "ocaml",
+ "argv": [
+      "/home/jupyter/.opam/system/bin/iocaml.top",
+      "-log",
+      "/home/jupyter/iocaml.log",
+      "-object-info",
+      "-completion",
+      "-connection-file",
+      "{connection_file}"
+ ]
+}
