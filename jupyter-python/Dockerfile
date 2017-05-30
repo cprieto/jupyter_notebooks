@@ -9,16 +9,18 @@ RUN apk update && apk upgrade \
     && rm -rf /var/cache/apk/* \
     && adduser -D jupyter \
     && mkdir /home/jupyter/notebooks \
-    && chown jupyter /home/jupyter/notebooks 
+    && chown jupyter /home/jupyter/notebooks \
+    && apk del wget build-base \
+    && rm -rf /var/cache/apk/*
+
 
 EXPOSE 8888
 
 USER jupyter
-COPY jupyter_notebook_config.py /home/jupyter
 WORKDIR /home/jupyter/notebooks
 
 VOLUME ["/home/jupyter/notebooks"]
 
 ENTRYPOINT ["tini", "--"]
 
-CMD ["jupyter", "notebook", "--no-browser", "--config", "/home/jupyter/jupyter_notebook_config.py"]
+CMD ["jupyter-notebook", "--no-browser", "--ip", "0.0.0.0", "--NotebookApp.token="]
