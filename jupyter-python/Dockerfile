@@ -11,7 +11,7 @@ RUN apk update && apk upgrade \
     && mkdir /home/jupyter/notebooks \
     && chown jupyter /home/jupyter/notebooks \
     && apk del wget build-base \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* 
 
 
 EXPOSE 8888
